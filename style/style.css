@@ -21,64 +21,97 @@ body {
   top: 20vh;
 }
 
-/* MIDDLE SECTION: Photo & Wish */
+.one { font-size: 4.5rem; color: #166534; font-weight: 600; }
+.two { font-size: 1.5rem; color: #15803d; }
+.three { font-size: 3rem; color: #be123c; font-weight: 600; }
+
+.text-box {
+  width: 500px;
+  max-width: 90vw;
+  margin: 0 auto;
+  border: 4px solid #84cc16;
+  border-radius: 15px;
+  padding: 25px;
+  background: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.fake-btn {
+  cursor: pointer;
+  background-color: #e11d48;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(225, 29, 72, 0.3);
+  transition: transform 0.2s ease, background 0.2s;
+  pointer-events: auto; 
+  z-index: 100;
+}
+
+.fake-btn:hover { background-color: #be123c; transform: scale(1.05); }
+.fake-btn:active { transform: scale(0.95); }
+
 .six {
-  top: 40vh !important;
+  top: 35vh !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
   z-index: 10; 
 }
 
 .lydia-dp {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 8px solid white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  object-fit: cover;
 }
 
 .hat {
   position: absolute;
   width: 70px;
-  top: -35px;
+  top: -30px;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
+  transform: translateX(-50%) rotate(-15deg);
+  z-index: 11;
 }
 
 .wish-hbd {
-  font-size: 3.5em;
+  font-size: 3.5rem;
   color: #be123c;
-  margin: 0;
+  margin: 15px 0 5px;
+  font-weight: 700;
   text-shadow: 2px 2px 0px white;
 }
 
 .wish h5 {
-  font-size: 1.5rem;
-  margin: 10px 0 0;
+  font-size: 1.4rem;
+  margin: 0;
   color: #15803d;
+  font-weight: 400;
 }
 
-/* GARDEN CONTAINER */
 .garden-elements {
   position: absolute;
   top: auto !important;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30vh;
+  height: 35vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 5px;
   z-index: 1;
-  pointer-events: none; 
+  pointer-events: none;
+  overflow: visible;
 }
 
-/* GRASS FIELD */
 .grass-field {
   position: absolute;
   bottom: 0;
@@ -87,70 +120,47 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
-  z-index: 0;
+  align-items: flex-end;
+  z-index: 0; 
   overflow: hidden;
+  opacity: 1;
 }
 
 .grass-img {
-  height: 100%;
-  min-width: 50.5%; /* Overlaps slightly to prevent gaps */
+  height: 150px;
+  min-width: 50.5%;
   object-fit: cover;
   object-position: bottom;
 }
 
-/* FLOWER IMAGES */
 .flower {
   position: relative;
-  width: 100px;
-  height: auto; 
+  width: 90px; 
+  height: auto;
   object-fit: contain;
   z-index: 2; 
   bottom: 15px;
+  margin-left: -25px;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
 }
 
-/* TEXT STYLES */
-.one { font-size: 4.5rem; color: #166534; }
-.two { font-size: 1.5rem; color: #15803d; }
-.three { font-size: 3rem; color: #be123c; }
-
-/* CHAT BOX AREA - Z-INDEX FIX */
-.four {
-  z-index: 50; 
-  position: relative;
-}
-
-.text-box {
-  width: 500px;
-  margin: 0 auto;
-  border: 3px solid #84cc16;
-  border-radius: 10px;
-  padding: 20px;
-  background: white;
-  position: relative;
-}
-
-.fake-btn {
-  cursor: pointer;
-  background-color: #e11d48;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 15px;
-  transition: transform 0.1s ease;
-  pointer-events: auto; 
-  z-index: 100;
-}
-
-.fake-btn:active {
-  transform: scale(0.95);
-}
+.flower:nth-child(2n) { width: 110px; z-index: 3; bottom: 5px; }
+.flower:nth-child(3n) { width: 80px; z-index: 1; bottom: 25px; filter: brightness(0.9); }
+.flower:nth-child(4n) { width: 100px; bottom: 10px; transform: rotate(5deg); }
+.flower:nth-child(5n) { transform: rotate(-5deg); }
 
 .five p, .five div { opacity: 0; }
 
 .nine {
+  top: auto !important;
+  bottom: 120px;
   visibility: hidden; 
   z-index: 60; 
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 #replay {
