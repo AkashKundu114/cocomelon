@@ -30,19 +30,17 @@ const animationTimeline = () => {
     // 2. Show Button & PAUSE
     .from(".fake-btn", 0.3, { scale: 0.2, opacity: 0 }, "buttonAppear")
     .call(() => {
-        tl.pause(); // Stops here so you can click the button
+        tl.pause(); 
     });
 
   // 3. Enable Click on Button
   const bloomBtn = document.querySelector(".fake-btn");
   bloomBtn.addEventListener("click", () => {
-      // Button Click Effect
       TweenMax.to(".fake-btn", 0.1, { backgroundColor: "#e11d48", scale: 0.95, yoyo: true, repeat: 1 });
-      // Resume Timeline
       tl.play(); 
   });
 
-  // 4. Resume Animation (Garden Bloom)
+  // 4. Resume Animation
   tl.to(".four", 0.5, { scale: 0.2, opacity: 0, y: -150 }, "+=0.5")
     
     // Text Sequence
@@ -53,14 +51,14 @@ const animationTimeline = () => {
     .from(".idea-3-group", 0.7, { opacity: 0, y: 20 }) 
     .to(".idea-3-group", 0.7, { opacity: 0, y: -20 }, "+=1.5")
    
-    // Grow Grass
+    // Grow Grass Field
     .from(".grass-field", 1.0, { 
         y: 200, 
         opacity: 0, 
         ease: Power4.easeOut 
     })
 
-    // Bloom Flowers (Stagger set to 0.2s for fast bloom)
+    // Bloom Flowers (Fast)
     .staggerFrom(".flower", 1.5, { 
         y: 200, 
         scale: 0.1, 
@@ -79,7 +77,7 @@ const animationTimeline = () => {
     
     .from(".hat", 0.5, { y: -200, opacity: 0, ease: Bounce.easeOut })
     
-    // 5. Outro (Using autoAlpha to make it visible/clickable only now)
+    // 5. Outro
     .from(".nine", 0.5, { autoAlpha: 0 });
 
   document.getElementById("replay").addEventListener("click", () => { tl.restart(); });
