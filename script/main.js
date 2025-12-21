@@ -27,6 +27,7 @@ const animationTimeline = () => {
     .from(".four", 0.7, { scale: 0.2, opacity: 0 })
     .to(".four", 0.5, { scale: 0.2, opacity: 0, y: -150 }, "+=1")
     
+    // Text Sequence
     .from(".idea-1", 0.7, { opacity: 0, y: 20 })
     .to(".idea-1", 0.7, { opacity: 0, y: -20 }, "+=1.5")
     .from(".idea-2", 0.7, { opacity: 0, y: 20 })
@@ -34,21 +35,30 @@ const animationTimeline = () => {
     .from(".idea-3-group", 0.7, { opacity: 0, y: 20 }) 
     .to(".idea-3-group", 0.7, { opacity: 0, y: -20 }, "+=1.5")
    
+    // 1. Grow Grass
     .from(".grass", 1.5, { 
         y: 200, 
         opacity: 0, 
         ease: Power4.easeOut 
     })
 
-    .staggerFrom(".flower", 2, { 
-        y: 200,     
+    // 2. Bloom Flowers
+    .staggerFrom(".flower", 1.5, { 
+        y: 200, 
         scale: 0.1, 
         opacity: 0, 
-        rotation: 15,
+        rotation: 15, 
         ease: Elastic.easeOut.config(1, 0.7) 
-    }, 0.8) 
+    }, 0.5)
 
-    .from(".six", 0.5, { scale: 3.5, opacity: 0, rotationZ: -45 }, "+=1")
+    // 3. Show Middle Content (Photo + Wish)
+    .from(".six", 0.8, { 
+        scale: 0.5, 
+        opacity: 0, 
+        rotationZ: -10,
+        ease: Back.easeOut.config(1.7) 
+    }, "-=0.5") // Overlap slightly with flowers finishing
+    
     .from(".hat", 0.5, { y: -200, opacity: 0, ease: Bounce.easeOut })
     .from(".nine", 0.5, { opacity: 0 });
 
