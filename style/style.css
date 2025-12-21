@@ -21,6 +21,7 @@ body {
   top: 20vh;
 }
 
+/* MIDDLE SECTION: Photo & Wish */
 .six {
   top: 40vh !important;
   display: flex;
@@ -61,6 +62,7 @@ body {
   color: #15803d;
 }
 
+/* GARDEN CONTAINER */
 .garden-elements {
   position: absolute;
   top: auto !important;
@@ -73,9 +75,10 @@ body {
   align-items: flex-end;
   gap: 5px;
   z-index: 1;
-  pointer-events: none; 
+  pointer-events: none; /* Allows clicks to pass through */
 }
 
+/* GRASS FIELD */
 .grass-field {
   position: absolute;
   bottom: 0;
@@ -95,6 +98,7 @@ body {
   object-position: bottom;
 }
 
+/* FLOWER VIDEOS */
 .flower {
   position: relative;
   width: 100px;
@@ -102,12 +106,18 @@ body {
   object-fit: cover;
   z-index: 2; 
   bottom: 15px;
-  mix-blend-mode: screen;
 }
 
+/* TEXT STYLES */
 .one { font-size: 4.5rem; color: #166534; }
 .two { font-size: 1.5rem; color: #15803d; }
 .three { font-size: 3rem; color: #be123c; }
+
+/* CHAT BOX AREA - Z-INDEX FIX */
+.four {
+  z-index: 50; /* Places this ABOVE the invisible replay screen */
+  position: relative;
+}
 
 .text-box {
   width: 500px;
@@ -116,8 +126,10 @@ body {
   border-radius: 10px;
   padding: 20px;
   background: white;
+  position: relative;
 }
 
+/* The Bloom Button */
 .fake-btn {
   cursor: pointer;
   background-color: #e11d48;
@@ -126,7 +138,9 @@ body {
   border-radius: 5px;
   display: inline-block;
   margin-top: 15px;
-  transition: transform 0.1s ease; 
+  transition: transform 0.1s ease;
+  pointer-events: auto; /* Ensures it catches clicks */
+  z-index: 100;
 }
 
 .fake-btn:active {
@@ -134,6 +148,12 @@ body {
 }
 
 .five p, .five div { opacity: 0; }
+
+/* OUTRO / REPLAY SECTION */
+.nine {
+  visibility: hidden; /* Hides it so it doesn't block clicks */
+  z-index: 60; /* Higher than .four ONLY when visible */
+}
 
 #replay {
   cursor: pointer;
