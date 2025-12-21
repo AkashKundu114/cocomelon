@@ -18,6 +18,7 @@ const fetchData = () => {
 
 const animationTimeline = () => {
   const tl = new TimelineMax();
+
   tl.to(".container", 0.1, { visibility: "visible" })
     .from(".one", 0.7, { opacity: 0, y: 10 })
     .to(".one", 0.7, { opacity: 0, y: 10 }, "+=2.5")
@@ -25,9 +26,20 @@ const animationTimeline = () => {
     .to(".three", 0.7, { opacity: 0, y: 10 }, "+=2")
     .from(".four", 0.7, { scale: 0.2, opacity: 0 })
     .to(".four", 0.5, { scale: 0.2, opacity: 0, y: -150 }, "+=1")
-    // reveal garden
-    .staggerFrom(".flower", 1.5, { y: 1000, opacity: 0, rotation: 45, ease: Back.easeOut }, 0.2)
+    .from(".idea-1", 0.7, { opacity: 0, y: 20 })
+    .to(".idea-1", 0.7, { opacity: 0, y: -20 }, "+=1.5")
+    .from(".idea-2", 0.7, { opacity: 0, y: 20 })
+    .to(".idea-2", 0.7, { opacity: 0, y: -20 }, "+=1.5")
+   
+    .staggerFrom(".flower", 1.2, { 
+        y: 500, 
+        opacity: 0, 
+        rotation: 20, 
+        ease: Back.easeOut.config(1.7) 
+    }, 0.2)
+
     .from(".six", 0.5, { scale: 3.5, opacity: 0, rotationZ: -45 }, "-=1")
+    .from(".hat", 0.5, { y: -200, opacity: 0, ease: Bounce.easeOut })
     .from(".nine", 0.5, { opacity: 0 });
 
   document.getElementById("replay").addEventListener("click", () => { tl.restart(); });
