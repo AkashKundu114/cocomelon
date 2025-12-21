@@ -25,6 +25,10 @@ body {
 .two { font-size: 1.5rem; color: #15803d; }
 .three { font-size: 3rem; color: #be123c; font-weight: 600; }
 
+.four {
+  z-index: 50; 
+}
+
 .text-box {
   width: 500px;
   max-width: 90vw;
@@ -36,6 +40,7 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   font-size: 1.2rem;
   color: #333;
+  position: relative;
 }
 
 .fake-btn {
@@ -50,6 +55,7 @@ body {
   box-shadow: 0 5px 15px rgba(225, 29, 72, 0.3);
   transition: transform 0.2s ease, background 0.2s;
   pointer-events: auto; 
+  position: relative;
   z-index: 100;
 }
 
@@ -127,7 +133,7 @@ body {
 }
 
 .grass-img {
-  height: 150px;
+  height: 150px; 
   min-width: 50.5%;
   object-fit: cover;
   object-position: bottom;
@@ -139,8 +145,8 @@ body {
   height: auto;
   object-fit: contain;
   z-index: 2; 
-  bottom: 15px;
-  margin-left: -25px;
+  bottom: 15px; 
+  margin-left: -25px; 
   transform-origin: bottom center;
   filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
 }

@@ -35,7 +35,7 @@ const animationTimeline = () => {
       tl.play(); 
   });
 
-  tl.to(".four", 0.3, { scale: 0.2, opacity: 0, y: -150 })
+  tl.to(".four", 0.3, { scale: 0.2, opacity: 0, y: -150 }) 
     
     .from(".idea-1", 0.5, { opacity: 0, y: 20 })
     .to(".idea-1", 0.5, { opacity: 0, y: -20 }, "+=0.5")
