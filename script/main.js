@@ -25,9 +25,20 @@ const animationTimeline = () => {
     .from(".three", 0.7, { opacity: 0, y: 10 })
     .to(".three", 0.7, { opacity: 0, y: 10 }, "+=2")
     .from(".four", 0.7, { scale: 0.2, opacity: 0 })
-    .to(".four", 0.5, { scale: 0.2, opacity: 0, y: -150 }, "+=1")
     
-    // Text Sequence
+    .from(".fake-btn", 0.3, { scale: 0.2, opacity: 0 }, "buttonAppear")
+    .call(() => {
+        tl.pause(); 
+    });
+
+  const bloomBtn = document.querySelector(".fake-btn");
+  bloomBtn.addEventListener("click", () => {
+      TweenMax.to(".fake-btn", 0.1, { backgroundColor: "#e11d48", scale: 0.95, yoyo: true, repeat: 1 });
+      tl.play(); 
+  });
+
+  tl.to(".four", 0.5, { scale: 0.2, opacity: 0, y: -150 }, "+=0.5")
+    
     .from(".idea-1", 0.7, { opacity: 0, y: 20 })
     .to(".idea-1", 0.7, { opacity: 0, y: -20 }, "+=1.5")
     .from(".idea-2", 0.7, { opacity: 0, y: 20 })
@@ -35,29 +46,26 @@ const animationTimeline = () => {
     .from(".idea-3-group", 0.7, { opacity: 0, y: 20 }) 
     .to(".idea-3-group", 0.7, { opacity: 0, y: -20 }, "+=1.5")
    
-    // 1. Grow Grass
-    .from(".grass", 1.5, { 
+    .from(".grass-field", 1.0, { 
         y: 200, 
         opacity: 0, 
         ease: Power4.easeOut 
     })
 
-    // 2. Bloom Flowers
     .staggerFrom(".flower", 1.5, { 
         y: 200, 
         scale: 0.1, 
         opacity: 0, 
         rotation: 15, 
         ease: Elastic.easeOut.config(1, 0.7) 
-    }, 0.5)
+    }, 0.2) 
 
-    // 3. Show Middle Content (Photo + Wish)
     .from(".six", 0.8, { 
         scale: 0.5, 
         opacity: 0, 
         rotationZ: -10,
         ease: Back.easeOut.config(1.7) 
-    }, "-=0.5") // Overlap slightly with flowers finishing
+    }, "-=0.5")
     
     .from(".hat", 0.5, { y: -200, opacity: 0, ease: Bounce.easeOut })
     .from(".nine", 0.5, { opacity: 0 });
