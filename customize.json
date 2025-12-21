@@ -1,0 +1,16 @@
+{
+  "greeting": "Heya",
+  "name": "Siddhi",
+  "greetingText": "Look at what's blooming!",
+  "wishText": "White & Red Roses, Pink, Blue & White Tulips just for you! ;)",
+  "imagePath": "assets/human.png",
+  "text1": "It's your special day!",
+  "textInChatBox": "Click to see your garden bloom...",
+  "sendButtonLabel": "Grow",
+  "text2": "A simple card wasn't enough.",
+  "text3": "So I planted these just for you.",
+  "text4": "I wanted to do something",
+  "text4Adjective": "Vibrant",
+  "wishHeading": "Happy Birthday!",
+  "replayText": "Watch it bloom again?"
+}

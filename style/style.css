@@ -1,0 +1,15 @@
+body { margin: 0; font-family: "Work Sans", sans-serif; background-color: #f7fee7; overflow: hidden; }
+.container { height: 100vh; width: 100vw; position: relative; visibility: hidden; text-align: center; }
+.container > div { position: absolute; left: 0; right: 0; top: 15vh; }
+.one { font-size: 4rem; color: #166534; }
+.text-box { width: 400px; margin: 0 auto; border: 2px solid #84cc16; padding: 20px; border-radius: 12px; background: white; }
+.fake-btn { cursor: pointer; background: #e11d48; color: white; padding: 10px 20px; border-radius: 8px; display: inline-block; margin-top: 10px; }
+.lydia-dp { width: 220px; height: 220px; border-radius: 50%; border: 6px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.hat { position: absolute; width: 70px; top: -30px; left: 42%; z-index: 5; }
+.wish-hbd { font-size: 3.5rem; color: #be123c; margin: 10px 0; }
+
+/* Garden Styling */
+.garden-elements { bottom: 0; top: auto !important; height: 200px; display: flex; justify-content: center; align-items: flex-end; gap: 20px; z-index: 10; }
+.flower { width: 80px; transition: transform 0.3s; }
+.flower:hover { transform: scale(1.2) translateY(-10px); }
+#replay { cursor: pointer; color: #166534; text-decoration: underline; font-weight: bold; }
