@@ -1,0 +1,32 @@
+{
+  "name": "birthday-garden",
+  "version": "1.0.0",
+  "description": "An interactive animated birthday garden featuring roses and tulips.",
+  "main": "index.html",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "run-script-os": "^1.0.2"
+  },
+  "scripts": {
+    "start": "run-script-os",
+    "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
+    "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashkundu114/cocomelon.git"
+  },
+  "keywords": [
+    "Happy",
+    "Birthday",
+    "Interactive",
+    "Garden"
+  ],
+  "author": "Akash Kundu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akashkundu114/cocomelon/issues"
+  },
+  "homepage": "https://github.com/akashkundu114/cocomelon#readme"
+}
