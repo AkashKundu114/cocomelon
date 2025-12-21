@@ -18,7 +18,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 20vh;
+  top: 15vh; 
 }
 
 .one { font-size: 4.5rem; color: #166534; }
@@ -44,40 +44,53 @@ body {
   margin-top: 15px;
 }
 
+.five p, .five .idea-3-group {
+  opacity: 0;
+}
+
+.six {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .lydia-dp {
   width: 250px;
   height: 250px;
   border-radius: 50%;
   border: 8px solid white;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .hat {
   position: absolute;
   width: 80px;
-  top: -40px;
-  left: 42%;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 5;
 }
 
 .wish-hbd {
   font-size: 4em;
   color: #be123c;
-  margin: 15px 0 0;
+  margin: 0;
 }
 
 .garden-elements {
   bottom: 0;
   top: auto !important;
-  height: 250px;
+  height: 220px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 15px;
+  gap: 5px; 
 }
 
 .flower {
-  width: 120px;
+  width: 85px; 
   height: auto;
   object-fit: contain;
 }
