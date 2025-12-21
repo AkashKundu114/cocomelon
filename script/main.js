@@ -34,14 +34,21 @@ const animationTimeline = () => {
     .from(".idea-3-group", 0.7, { opacity: 0, y: 20 }) 
     .to(".idea-3-group", 0.7, { opacity: 0, y: -20 }, "+=1.5")
    
-    .staggerFrom(".flower", 1.2, { 
-        y: 500, 
+    .from(".grass", 1.5, { 
+        y: 200, 
         opacity: 0, 
-        rotation: 20, 
-        ease: Back.easeOut.config(1.7) 
-    }, 0.1)
+        ease: Power4.easeOut 
+    })
 
-    .from(".six", 0.5, { scale: 3.5, opacity: 0, rotationZ: -45 }, "-=1")
+    .staggerFrom(".flower", 2, { 
+        y: 200,     
+        scale: 0.1, 
+        opacity: 0, 
+        rotation: 15,
+        ease: Elastic.easeOut.config(1, 0.7) 
+    }, 0.8) 
+
+    .from(".six", 0.5, { scale: 3.5, opacity: 0, rotationZ: -45 }, "+=1")
     .from(".hat", 0.5, { y: -200, opacity: 0, ease: Bounce.easeOut })
     .from(".nine", 0.5, { opacity: 0 });
 
