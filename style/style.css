@@ -172,14 +172,14 @@ body {
   height: 160px;
   object-fit: contain;
   z-index: 1; 
-  bottom: 5px;
+  bottom: 0;
   margin-left: -35px;
   transform-origin: bottom center;
   filter: brightness(0.95); 
 }
 
-.flower:nth-child(2n) { width: 110px; bottom: 15px; }
-.flower:nth-child(3n) { width: 75px; bottom: 15px; filter: brightness(0.9); }
+.flower:nth-child(2n) { width: 110px; bottom: 0; }
+.flower:nth-child(3n) { width: 75px; bottom: 0; filter: brightness(0.9); }
 .flower:nth-child(4n) { transform: rotate(5deg); }
 .flower:nth-child(5n) { transform: rotate(-5deg); }
 
