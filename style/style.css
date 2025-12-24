@@ -14,7 +14,7 @@ body {
   position: relative;
 }
 
-/* Center all main sections vertically */
+/* Center Content */
 .container > div {
   position: absolute;
   left: 0;
@@ -52,7 +52,7 @@ body {
   font-size: 3.2rem;
   text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
 }
-.five > p, .five .idea-3-group { opacity: 0; } /* Initial hidden state */
+.five > p, .five .idea-3-group { opacity: 0; }
 .five .idea-3-group p { opacity: 1; }
 
 /* BUTTON */
@@ -143,42 +143,45 @@ body {
   transform: none !important;
 }
 
-/* GRASS FIELD */
+/* GRASS FIELD - NOW IN FRONT */
 .grass-field {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100%; 
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 0; /* Behind flowers */
+  z-index: 5; /* HIGHER than flowers */
   overflow: hidden;
 }
 
 .grass-img {
-  height: 80px; /* Reduced height to stay low */
+  height: 80px;
   width: auto;
-  min-width: 25%; /* Use 25% if you have 4 images to fill 100% width */
+  min-width: 15%; /* Smaller width per grass to allow more of them */
   object-fit: cover;
   object-position: bottom;
+  margin-left: -20px; /* CROWDED EFFECT: Overlap the grass */
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.2)); /* Optional shadow for depth */
 }
 
-/* FLOWERS */
+/* FLOWERS - NOW BEHIND */
 .flower {
   position: relative;
   width: 90px; 
   height: auto;
   object-fit: contain;
-  z-index: 2; /* In front of grass */
-  bottom: 15px; 
-  margin-left: -35px; /* Overlap */
+  z-index: 1; /* LOWER than grass */
+  bottom: 15px; /* Sits lower to look rooted */
+  margin-left: -35px;
   transform-origin: bottom center;
-  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+  filter: brightness(0.95); /* Slightly darker to look like background */
 }
 
-.flower:nth-child(2n) { width: 110px; z-index: 3; bottom: 8px; }
-.flower:nth-child(3n) { width: 75px; z-index: 1; bottom: 25px; filter: brightness(0.9); }
+/* Variations */
+.flower:nth-child(2n) { width: 110px; bottom: 10px; }
+.flower:nth-child(3n) { width: 75px; bottom: 20px; filter: brightness(0.9); }
 .flower:nth-child(4n) { transform: rotate(5deg); }
 .flower:nth-child(5n) { transform: rotate(-5deg); }
 
