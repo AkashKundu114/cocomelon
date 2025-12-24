@@ -157,7 +157,7 @@ body {
 }
 
 .grass-img {
-  height: 60px;
+  height: 65px;
   width: 90px;
   object-fit: contain;
   object-position: bottom;
@@ -172,7 +172,7 @@ body {
   height: 160px;
   object-fit: contain;
   z-index: 1; 
-  bottom: 0;
+  bottom: -5px;
   margin-left: -35px;
   transform-origin: bottom center;
   filter: brightness(0.95); 
