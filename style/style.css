@@ -143,7 +143,6 @@ body {
   transform: none !important;
 }
 
-/* GRASS FIELD - IN FRONT */
 .grass-field {
   position: absolute;
   bottom: 0;
@@ -152,7 +151,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 5; /* HIGHER z-index keeps grass in front */
+  z-index: 5;
   overflow: hidden;
   pointer-events: none;
 }
@@ -162,7 +161,7 @@ body {
   width: 90px;
   object-fit: contain;
   object-position: bottom;
-  margin-left: -40px; /* HEAVY OVERLAP for crowded look */
+  margin-left: -40px; 
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
 }
 
