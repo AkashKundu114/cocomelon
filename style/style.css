@@ -143,7 +143,7 @@ body {
   transform: none !important;
 }
 
-/* GRASS FIELD - NOW IN FRONT */
+/* GRASS FIELD - IN FRONT */
 .grass-field {
   position: absolute;
   bottom: 0;
@@ -152,36 +152,37 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 5; /* HIGHER than flowers */
+  z-index: 5; /* HIGHER z-index keeps grass in front */
   overflow: hidden;
+  pointer-events: none;
 }
 
 .grass-img {
-  height: 80px;
+  height: 90px;
   width: auto;
-  min-width: 15%; /* Smaller width per grass to allow more of them */
+  min-width: 10%; 
   object-fit: cover;
   object-position: bottom;
-  margin-left: -20px; /* CROWDED EFFECT: Overlap the grass */
-  filter: drop-shadow(0 0 5px rgba(0,0,0,0.2)); /* Optional shadow for depth */
+  margin-left: -40px; /* HEAVY OVERLAP for crowded look */
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
 }
 
-/* FLOWERS - NOW BEHIND */
+/* FLOWERS - BEHIND */
 .flower {
   position: relative;
   width: 90px; 
   height: auto;
   object-fit: contain;
-  z-index: 1; /* LOWER than grass */
-  bottom: 15px; /* Sits lower to look rooted */
+  z-index: 1; /* LOWER z-index keeps flowers behind grass */
+  bottom: 25px; /* Sits lower to appear rooted */
   margin-left: -35px;
   transform-origin: bottom center;
-  filter: brightness(0.95); /* Slightly darker to look like background */
+  filter: brightness(0.95); 
 }
 
 /* Variations */
-.flower:nth-child(2n) { width: 110px; bottom: 10px; }
-.flower:nth-child(3n) { width: 75px; bottom: 20px; filter: brightness(0.9); }
+.flower:nth-child(2n) { width: 110px; bottom: 15px; }
+.flower:nth-child(3n) { width: 75px; bottom: 30px; filter: brightness(0.9); }
 .flower:nth-child(4n) { transform: rotate(5deg); }
 .flower:nth-child(5n) { transform: rotate(-5deg); }
 
