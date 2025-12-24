@@ -180,6 +180,8 @@ body {
 
 .flower:nth-child(2n) { width: 110px; bottom: 15px; }
 .flower:nth-child(3n) { width: 75px; bottom: 30px; filter: brightness(0.9); }
+.flower:nth-child(4n) { transform: rotate(5deg); }
+.flower:nth-child(5n) { transform: rotate(-5deg); }
 
 .nine {
   top: auto !important;
