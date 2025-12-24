@@ -161,7 +161,7 @@ body {
 }
 
 .grass-img {
-  height: 60px; /* Reduced Height to keep it low */
+  height: auto; /* Reduced Height to keep it low */
   width: auto;
   min-width: 34%; /* Ensures it still covers width */
   object-fit: cover;
