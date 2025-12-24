@@ -178,8 +178,8 @@ body {
   filter: brightness(0.95); 
 }
 
-.flower:nth-child(2n) { width: 110px; bottom: 0; }
-.flower:nth-child(3n) { width: 75px; bottom: 0; filter: brightness(0.9); }
+.flower:nth-child(2n) { width: 165px; bottom: 0; }
+.flower:nth-child(3n) { width: 113px; bottom: 0; filter: brightness(0.9); }
 .flower:nth-child(4n) { transform: rotate(5deg); }
 .flower:nth-child(5n) { transform: rotate(-5deg); }
 
