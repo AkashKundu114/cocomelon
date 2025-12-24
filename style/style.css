@@ -171,7 +171,7 @@ body {
 .flower {
   position: relative;
   width: 90px; 
-  height: 90px;
+  height: 120px;
   object-fit: contain;
   z-index: 1; /* LOWER z-index keeps flowers behind grass */
   bottom: 25px; /* Sits lower to appear rooted */
