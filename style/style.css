@@ -14,17 +14,22 @@ body {
   position: relative;
 }
 
+/* ---------------- CENTERING FIX ---------------- */
+/* Position all main sections in the absolute center of the screen */
 .container > div {
   position: absolute;
   left: 0;
   right: 0;
-  top: 20vh;
+  top: 50%;
+  transform: translateY(-50%); /* Moves them up by 50% of their own height */
 }
 
+/* ---------------- TEXT STYLES ---------------- */
 .one { font-size: 4.5rem; color: #166534; font-weight: 600; }
 .two { font-size: 1.5rem; color: #15803d; }
 .three { font-size: 3rem; color: #be123c; font-weight: 600; }
 
+/* FIX: Ensure the button container is on top */
 .four {
   z-index: 50; 
 }
@@ -62,8 +67,19 @@ body {
 .fake-btn:hover { background-color: #be123c; transform: scale(1.05); }
 .fake-btn:active { transform: scale(0.95); }
 
+/* ---------------- VISIBILITY FIX ---------------- */
+/* Only hide direct children paragraphs, NOT the ones inside the group */
+.five > p, .five .idea-3-group { 
+  opacity: 0; 
+}
+/* Ensure text inside the group is visible when the group fades in */
+.five .idea-3-group p {
+  opacity: 1;
+}
+
+/* ---------------- PHOTO SECTION ---------------- */
 .six {
-  top: 35vh !important;
+  /* Override default centering if needed, but top: 50% works well here */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,9 +119,10 @@ body {
   font-weight: 400;
 }
 
+/* ---------------- GARDEN CONTAINER ---------------- */
 .garden-elements {
   position: absolute;
-  top: auto !important;
+  top: auto !important; /* Don't center the garden, keep it at bottom */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -116,8 +133,10 @@ body {
   z-index: 1;
   pointer-events: none;
   overflow: visible;
+  transform: none !important; /* Reset the center transform */
 }
 
+/* GRASS FIELD */
 .grass-field {
   position: absolute;
   bottom: 0;
@@ -139,6 +158,7 @@ body {
   object-position: bottom;
 }
 
+/* ---------------- FLOWER STYLING ---------------- */
 .flower {
   position: relative;
   width: 90px; 
@@ -156,10 +176,9 @@ body {
 .flower:nth-child(4n) { width: 100px; bottom: 10px; transform: rotate(5deg); }
 .flower:nth-child(5n) { transform: rotate(-5deg); }
 
-.five p, .five div { opacity: 0; }
-
+/* ---------------- OUTRO TEXT ---------------- */
 .nine {
-  top: auto !important;
+  top: auto !important; /* Override centering */
   bottom: 120px;
   visibility: hidden; 
   z-index: 60; 
@@ -167,6 +186,9 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateX(-50%); /* Center horizontally, fix for absolute left/right */
+  left: 50%;
+  right: auto;
 }
 
 #replay {
