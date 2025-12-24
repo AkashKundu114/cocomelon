@@ -157,11 +157,12 @@ body {
 }
 
 .grass-img {
-  height: 100px;
+  height: 80px;
   width: 90px;
   object-fit: contain;
   object-position: bottom;
   margin-left: -40px; 
+  bottom: 0;
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
 }
 
