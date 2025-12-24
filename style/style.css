@@ -14,26 +14,22 @@ body {
   position: relative;
 }
 
-/* ---------------- CENTERING FIX ---------------- */
-/* Position all main sections in the absolute center of the screen */
+/* Center Content Vertically */
 .container > div {
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
-  transform: translateY(-50%); /* Moves them up by 50% of their own height */
+  transform: translateY(-50%);
 }
 
-/* ---------------- TEXT STYLES ---------------- */
+/* TEXT STYLES */
 .one { font-size: 4.5rem; color: #166534; font-weight: 600; }
 .two { font-size: 1.5rem; color: #15803d; }
 .three { font-size: 3rem; color: #be123c; font-weight: 600; }
 
-/* FIX: Ensure the button container is on top */
-.four {
-  z-index: 50; 
-}
-
+/* BUTTON */
+.four { z-index: 50; }
 .text-box {
   width: 500px;
   max-width: 90vw;
@@ -47,7 +43,6 @@ body {
   color: #333;
   position: relative;
 }
-
 .fake-btn {
   cursor: pointer;
   background-color: #e11d48;
@@ -63,29 +58,20 @@ body {
   position: relative;
   z-index: 100;
 }
-
 .fake-btn:hover { background-color: #be123c; transform: scale(1.05); }
 .fake-btn:active { transform: scale(0.95); }
 
-/* ---------------- VISIBILITY FIX ---------------- */
-/* Only hide direct children paragraphs, NOT the ones inside the group */
-.five > p, .five .idea-3-group { 
-  opacity: 0; 
-}
-/* Ensure text inside the group is visible when the group fades in */
-.five .idea-3-group p {
-  opacity: 1;
-}
+/* VISIBILITY LOGIC */
+.five > p, .five .idea-3-group { opacity: 0; }
+.five .idea-3-group p { opacity: 1; }
 
-/* ---------------- PHOTO SECTION ---------------- */
+/* PHOTO SECTION */
 .six {
-  /* Override default centering if needed, but top: 50% works well here */
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 10; 
 }
-
 .lydia-dp {
   width: 200px;
   height: 200px;
@@ -94,7 +80,6 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   object-fit: cover;
 }
-
 .hat {
   position: absolute;
   width: 70px;
@@ -103,7 +88,6 @@ body {
   transform: translateX(-50%) rotate(-15deg);
   z-index: 11;
 }
-
 .wish-hbd {
   font-size: 3.5rem;
   color: #be123c;
@@ -111,7 +95,6 @@ body {
   font-weight: 700;
   text-shadow: 2px 2px 0px white;
 }
-
 .wish h5 {
   font-size: 1.4rem;
   margin: 0;
@@ -119,21 +102,21 @@ body {
   font-weight: 400;
 }
 
-/* ---------------- GARDEN CONTAINER ---------------- */
+/* --- GARDEN STYLES --- */
 .garden-elements {
   position: absolute;
-  top: auto !important; /* Don't center the garden, keep it at bottom */
+  top: auto !important;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 35vh;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-end; /* Aligns flowers to bottom */
   z-index: 1;
   pointer-events: none;
   overflow: visible;
-  transform: none !important; /* Reset the center transform */
+  transform: none !important;
 }
 
 /* GRASS FIELD */
@@ -141,44 +124,44 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%; 
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Tiles grass */
   align-items: flex-end;
-  z-index: 0; 
+  z-index: 0; /* Behind flowers */
   overflow: hidden;
-  opacity: 1;
 }
 
 .grass-img {
-  height: 150px; 
-  min-width: 50.5%;
+  height: 120px; /* Adjust height based on your PNG */
+  width: auto;
+  min-width: 34%; /* Ensures 3 images cover >100% width */
   object-fit: cover;
   object-position: bottom;
 }
 
-/* ---------------- FLOWER STYLING ---------------- */
+/* FLOWERS */
 .flower {
   position: relative;
-  width: 90px; 
+  width: 80px; 
   height: auto;
   object-fit: contain;
-  z-index: 2; 
-  bottom: 15px; 
-  margin-left: -25px; 
+  z-index: 2; /* In front of grass */
+  bottom: 10px; /* Sits slightly 'in' the grass */
+  margin-left: -35px; /* Heavy overlap for crowded look */
   transform-origin: bottom center;
   filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
 }
 
-.flower:nth-child(2n) { width: 110px; z-index: 3; bottom: 5px; }
-.flower:nth-child(3n) { width: 80px; z-index: 1; bottom: 25px; filter: brightness(0.9); }
-.flower:nth-child(4n) { width: 100px; bottom: 10px; transform: rotate(5deg); }
-.flower:nth-child(5n) { transform: rotate(-5deg); }
+/* Variation for natural look */
+.flower:nth-child(2n) { width: 100px; z-index: 3; bottom: 5px; }
+.flower:nth-child(3n) { width: 70px; z-index: 1; bottom: 20px; filter: brightness(0.9); }
+.flower:nth-child(4n) { transform: rotate(8deg); }
+.flower:nth-child(5n) { transform: rotate(-8deg); }
 
-/* ---------------- OUTRO TEXT ---------------- */
+/* OUTRO */
 .nine {
-  top: auto !important; /* Override centering */
+  top: auto !important;
   bottom: 120px;
   visibility: hidden; 
   z-index: 60; 
@@ -186,11 +169,10 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transform: translateX(-50%); /* Center horizontally, fix for absolute left/right */
+  transform: translateX(-50%);
   left: 50%;
   right: auto;
 }
-
 #replay {
   cursor: pointer;
   color: #166534;
