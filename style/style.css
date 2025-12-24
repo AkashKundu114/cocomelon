@@ -157,7 +157,7 @@ body {
 }
 
 .grass-img {
-  height: 80px;
+  height: 75px;
   width: 90px;
   object-fit: contain;
   object-position: bottom;
@@ -171,18 +171,15 @@ body {
   width: 90px; 
   height: 120px;
   object-fit: contain;
-  z-index: 1; /* LOWER z-index keeps flowers behind grass */
+  z-index: 1; 
   bottom: 5px;
   margin-left: -35px;
   transform-origin: bottom center;
   filter: brightness(0.95); 
 }
 
-/* Variations */
 .flower:nth-child(2n) { width: 110px; bottom: 15px; }
 .flower:nth-child(3n) { width: 75px; bottom: 30px; filter: brightness(0.9); }
-.flower:nth-child(4n) { transform: rotate(5deg); }
-.flower:nth-child(5n) { transform: rotate(-5deg); }
 
 .nine {
   top: auto !important;
