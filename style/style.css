@@ -130,7 +130,7 @@ body {
 .garden-elements {
   position: absolute;
   top: auto !important;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   width: 100%;
   height: 35vh;
