@@ -93,9 +93,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 10;
-  /* Lifted up to make room for the larger garden */
-  top: 40%; 
+  z-index: 10; 
 }
 .lydia-dp {
   width: 200px;
@@ -132,7 +130,7 @@ body {
 .garden-elements {
   position: absolute;
   top: auto !important;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   width: 100%;
   height: 35vh;
@@ -159,37 +157,29 @@ body {
 }
 
 .grass-img {
-  height: 12vh;       /* Larger grass relative to screen height */
-  width: 12vh;
+  height: 97px;
+  width: 135px;
   object-fit: contain;
   object-position: bottom;
-  margin-left: -5vh;  /* Adjusted spacing */
+  margin-left: -40px; 
   bottom: 0;
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
 }
 
 .flower {
   position: relative;
-  width: 18vh;       /* Significantly wider */
-  height: 35vh;      /* Significantly taller */
+  width: 150px; 
+  height: 240px;
   object-fit: contain;
   z-index: 1; 
-  bottom: 0;         /* Aligned flat on the bottom */
-  margin-left: -4vh; /* Adjusted spacing */
+  bottom: -5px;
+  margin-left: -35px;
   transform-origin: bottom center;
   filter: brightness(0.95); 
 }
 
-/* Variations */
-.flower:nth-child(2n) { 
-    width: 20vh; 
-    bottom: 0; 
-}
-.flower:nth-child(3n) { 
-    width: 15vh; 
-    bottom: 0; 
-    filter: brightness(0.9); 
-}
+.flower:nth-child(2n) { width: 110px; bottom: 0; }
+.flower:nth-child(3n) { width: 75px; bottom: 0; filter: brightness(0.9); }
 .flower:nth-child(4n) { transform: rotate(5deg); }
 .flower:nth-child(5n) { transform: rotate(-5deg); }
 
